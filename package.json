@@ -20,7 +20,8 @@
     "typescript": "^1.8.2",
     "typings": "^0.7.9",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "repository": {
     "type": "git",

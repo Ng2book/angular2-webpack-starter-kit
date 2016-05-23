@@ -4,13 +4,18 @@ const webpack = require('webpack');
 const config = require('./webpack.config');
 const proxy = require('express-http-proxy');
 const express = require('express');
-const webpackMiddleWare = require('webpack-dev-middleware');
+const devMiddleWare = require('webpack-dev-middleware');
+const hotMiddleWare = require('webpack-hot-middleware');
 
 // Build the app server
 const app = express();
+const webpackConfig = webpack(config);
 
 //Create new bundle when files are changed. 
-app.use(webpackMiddleWare(webpack(config)));
+app.use(devMiddleWare(webpackConfig));
+
+//Enable hot reloading
+app.use(hotMiddleWare(webpackConfig));
 
 // express static Middleware. Where to look for static assets
 app.use(express.static(path.resolve(__dirname, './'),{
