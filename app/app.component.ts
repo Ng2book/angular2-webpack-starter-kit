@@ -27,7 +27,7 @@ import {BasicZone} from './zone/basic-zone.ts';
 })
 @RouteConfig([
  	{ path: '/mission', name: 'Mission', component: Mission },
-	{ path: '/about-us', name: 'About', component: AboutUs, useAsDefault: true },
+	{ path: '/about-us/...', name: 'About', component: AboutUs, useAsDefault: true },
 	{ path: '/lifecycle', name: 'LifeCycle', component: LifeCycle },
 	{ path: '/dependency-injection', name: 'GreetUser', component: GreetUser },
 	{ path: '/httpClient', name: 'HttpClient', component: HttpClient },
